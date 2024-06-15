@@ -1,0 +1,144 @@
+/* .gallery-container{
+    margin: auto;
+    background-color: #ebedef;
+    padding-top: 20px;
+}
+.gallery-container h2 {
+    font-size: 50px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #ab0c08f7;
+  }
+  
+  .gallery-container p {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+  } */
+  .gallery{
+    width: 100%;
+  }
+
+  .gallery-container {
+  width: 70%;
+  margin: auto;
+  padding-top: 20px;
+  text-align: center;
+  
+}
+
+.gallery-container h2 {
+  font-size: 50px;
+  margin-bottom: 15px;
+  color: #AB0C08F7;
+  text-align: center;
+}
+
+.gallery-container p {
+    width: 72%;
+    margin: auto;
+    text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-top: 60px;
+}
+
+.grid-item {
+  width: 100%;
+  height:120px;
+  /* height: auto; */
+  background-color: aqua;
+}
+
+.grid-item-1 {
+  grid-column: span 2;
+  background-color: red;
+}
+
+.grid-item-4 {
+  grid-column: span 2;
+}
+
+.grid-item-7 {
+  grid-column: span 2;
+}
+.gallery-button{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px!important;
+        margin-bottom: 30px!important;
+        border: 1px solid black;
+        width: 300px;
+        margin: auto;
+        cursor: pointer;
+}
+.gallery-slide{
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .gallery-container {
+        width: 80%;
+        /* margin: auto; */
+        margin-top: 30px;
+        text-align: left;
+        
+      }
+      
+      .gallery-container h2 {
+        font-size: 25px;
+        margin-bottom: 5px!important;
+        color: #AB0C08F7;
+        text-align: left;
+      }
+      
+      .gallery-container p {
+        width: 100%;
+          text-align: left;
+          font-size: 15px;
+          margin-bottom: 20px;
+      }
+    .gallery-grid {
+      /* grid-template-columns: 1fr;
+      gap: 10px; */
+      display: none;
+    }
+    .gallery-slide{
+        display: block;
+        
+    }
+    
+    .grid-item {
+      width: 100%;
+      height: auto;
+    }
+    
+    /* .gallery-button {
+        width: 80%;
+        margin: auto;
+      padding: 5px 10px;
+      font-size: 14px;
+    } */
+    .gallery-button {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px!important;
+        margin-bottom: 30px!important;
+        border: 1px solid black;
+        width: 300px;
+        margin: auto;
+        cursor: pointer;
+      }
+      
+      .gallery-button.disabled {
+        cursor: not-allowed;
+        /* opacity: 0.6; */
+        pointer-events: none;
+      }
+  }

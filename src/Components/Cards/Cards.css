@@ -1,0 +1,82 @@
+.card-container {
+    background-color: #ebedef;
+    width: 280px;
+    padding: 10px;
+    position: relative;
+    margin-top: 60px;
+  }
+  /* .card-wrapper{
+    background-color: magenta;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  } */
+  
+  .card-image {
+    position: absolute;
+    top: -50px;
+  }
+  
+  .card-image img {
+    width: 140px;
+    height: 160px;
+  }
+  
+  .card-text-right {
+    text-align: left;
+    margin-left: 58%;
+    margin-bottom: 50px;
+  }
+  
+  .card-name {
+    color: #AB0C08F7;
+    font-size: 30px;
+  }
+  
+  .card-designation, .card-division {
+    font-size: 13px;
+  }
+  
+  .card-description {
+    display: flex;
+  }
+  
+  .card-indicator {
+    width: 15px;
+    background-color: #AB0C08F7;
+    height: 80px;
+    margin-right: 5px;
+  }
+  
+  .card-text {
+    font-size: 13px;
+    padding-right: 5px;
+  }
+  
+  .card-button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    border: 1px solid black;
+  }
+  
+  .card-button img {
+    margin-top: 5px;
+  }
+  
+
+
+/* .testimonials-button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    border: 1px solid black;
+  }
+  .testimonials-button img {
+    margin-top: 5px;
+  }
+  .text-right {
+    text-align: left;
+    margin-left: 55%;
+    margin-bottom: 50px;
+  } */
