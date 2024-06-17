@@ -74,11 +74,11 @@ const Gallery = () => {
           <img src={GalImg_9} alt="Gallery Image 9" className="grid-item" />
         </div>
         <div className='gallery-slide'>
-        <ImageSlider images={images} closeSlider={closeSlider} />
+          {isMobile && <ImageSlider images={images} closeSlider={closeSlider} showArrows={false} />}
         </div>
       </div>
-      <div 
-        className={`gallery-button ${isMobile ? 'disabled' : ''}`} 
+      <div
+        className={`gallery-button ${isMobile ? 'disabled' : ''}`}
         onClick={openSlider}
       >
         Explore Now
@@ -86,7 +86,7 @@ const Gallery = () => {
           <img style={{ marginTop: 5 }} src={Grey_Arrow} alt="Arrow" />
         </span>
       </div>
-      {showSlider && <ImageSlider images={images} closeSlider={closeSlider} />}
+      {showSlider && <ImageSlider images={images} closeSlider={closeSlider} showThumbnails={true} />}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -11,6 +11,9 @@ import Left_Arrow from '../../Components/Assets/left_arrow.png';
 import Right_Arrow from '../../Components/Assets/right_arrow.png';
 
 const Testimonials = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [sliderRef, setSliderRef] = useState(null);
+
   const cardsData = [
     {
       imgSrc: Img_1,
@@ -69,18 +72,18 @@ const Testimonials = () => {
   ];
 
   const NextArrow = (props) => {
-    const { className, onClick } = props;
+    const { className, onClick, disabled } = props;
     return (
-      <div className={className} onClick={onClick}>
+      <div className={`${className} ${disabled ? 'disabled' : ''}`} onClick={!disabled ? onClick : null}>
         <img src={Right_Arrow} alt="Next" />
       </div>
     );
   };
 
   const PrevArrow = (props) => {
-    const { className, onClick } = props;
+    const { className, onClick, disabled } = props;
     return (
-      <div className={className} onClick={onClick}>
+      <div className={`${className} ${disabled ? 'disabled' : ''}`} onClick={!disabled ? onClick : null}>
         <img src={Left_Arrow} alt="Previous" />
       </div>
     );
@@ -88,20 +91,28 @@ const Testimonials = () => {
 
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow disabled={currentSlide >= cardsData.length - 3} />,
+    prevArrow: <PrevArrow disabled={currentSlide === 0} />,
+    beforeChange: (oldIndex, newIndex) => {
+      setCurrentSlide(newIndex);
+    },
     responsive: [
       {
         breakpoint: 768,
         settings: {
+          dots: true,
+          infinite: false,
+          speed: 500,
           slidesToShow: 1,
           slidesToScroll: 1,
-          nextArrow: <NextArrow />,
-          prevArrow: <PrevArrow />,
+          // centerMode: true,
+          // centerPadding: '0',
+          nextArrow: <NextArrow disabled={currentSlide >= cardsData.length - 1} />,
+          prevArrow: <PrevArrow disabled={currentSlide === 0} />,
         },
       },
     ],
@@ -117,7 +128,7 @@ const Testimonials = () => {
           molestias doloremque esse.
         </p>
       </div>
-      <Slider {...settings}>
+      <Slider {...settings} ref={setSliderRef}>
         {cardsData.map((card, index) => (
           <div key={index} className="testimonial-slide">
             <Cards {...card} />
